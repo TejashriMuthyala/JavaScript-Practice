@@ -1,0 +1,28 @@
+<html>
+<head>
+</head>
+<body>
+<script>
+var num=100;
+for(i=1;i<=num;i++)
+{
+	var sum=0;
+	for(j=1;j<=i;j++)
+	{
+		if(i%j==0)
+		{
+			sum++;
+		}
+	}
+	if(sum==2)
+	{
+		document.write(i+" is prime"+"<br>");
+	}
+	else
+	{
+		document.write(i+" is  not prime"+"<br>");
+	}
+}
+</script>
+</body>
+</html>

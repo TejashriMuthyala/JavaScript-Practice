@@ -1,0 +1,33 @@
+<html>
+<head>
+</head>
+<body>
+<script>
+var num=[1,12,2,36,55,11,121,327,54,0];
+var num1=[1,12,2,36,55,11,121,327,54,0,5];
+var num2=[1,2,3,4,5,6]
+num.push(5);
+document.write(num);
+num1.pop(5);
+document.write("<br>"+num1);
+num.shift(5);
+document.write("<br>"+num);
+num1.unshift(5);
+document.write("<br>"+num1);
+num.splice(2,0,"E");
+document.write("<br>"+num);
+num1.splice(2,1);
+document.write("<br>"+num1);
+num.sort();
+document.write("<br>"+num);
+num1.reverse();
+document.write("<br>"+num1);
+var num3=num2.slice(3);
+document.write("<br>"+num3);
+var num4=num2.concat(num3);
+document.write("<br>"+num4);
+num.join('*');
+document.write("<br>"+num4);
+</script>
+</body>
+</html>

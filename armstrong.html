@@ -1,0 +1,29 @@
+<html>
+<head>
+</head>
+<body>
+<script>
+var num=371; var power=0; var temp=num,digits=0;
+while(num!=0)
+{
+	num=parseInt(num/10);
+	digits++;
+}
+num=temp;
+while(num!=0)
+{
+	res=num%10;
+	power+=Math.pow(res,digits);
+	num=parseInt(num/10);
+}
+if(power==temp)
+{
+	document.write(temp+" is an armstrong number");
+}
+else
+{
+	document.write(temp+" is not an armstrong number");
+}
+</script>
+</body>
+</html>
