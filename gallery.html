@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            height: 40px;
+            width: 80px;
+        }
+        #box{
+            margin-left: 425px;
+            margin-top: 225px;
+            border: 2px solid black;
+            height: 200px;
+            width: 450px;
+            padding-left: 25px;
+        }
+        h1{
+            padding-left: 125px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <h1 id="myh1">Hello World</h1>
+        <button style="background-color: red;" onclick="redcol()"></button>
+        <button style="background-color: blue;" onclick="bluecol()"></button>
+        <button style="background-color: green;" onclick="greencol()"></button>
+        <button style="background-color: orange;" onclick="orangecol()"></button>
+        <button style="background-color: teal;" onclick="tealcol()"></button>
+        <br><br>
+        <button onclick="font1()">Harlow Solid</button>
+        <button onclick="font2()">French Script MT</button>
+        <button onclick="font3()">MV <br>Boli</button>
+        <button onclick="font4()">Informal Roman</button>
+        <button onclick="font5()"><br>chiller</button>
+    </div>
+    <script>
+        function redcol(){
+            document.getElementById("myh1").style.color="red";
+        }
+        function bluecol(){
+            document.getElementById("myh1").style.color="blue";
+        }
+        function greencol(){
+            document.getElementById("myh1").style.color="green";
+        }
+        function orangecol(){
+            document.getElementById("myh1").style.color="orange";
+        }
+        function tealcol(){
+            document.getElementById("myh1").style.color="teal";
+        }
+        function font1(){
+            document.getElementById("myh1").style.fontFamily="Harlow Solid";
+        }
+        function font2(){
+            document.getElementById("myh1").style.fontFamily="French Script MT";
+        }
+        function font3(){
+            document.getElementById("myh1").style.fontFamily="MV Boli";
+        }
+        function font4(){
+            document.getElementById("myh1").style.fontFamily="Informal Roman";
+        }
+        function font5(){
+            document.getElementById("myh1").style.fontFamily="chiller";
+        }
+    </script>
+</body>
+</html>
