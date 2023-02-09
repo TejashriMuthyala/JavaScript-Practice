@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        #outbox {
+            border: 2px solid black;
+            height: 300px;
+            width: 300px;
+            margin-left: 500px;
+            margin-top: 175px;
+            padding-left: 0px;
+            padding-right: 30px;
+            
+        }
+        #button {
+            margin-left: 20px;
+            margin-top: 20px;
+            padding-left: 80px;
+            padding-bottom: 20px;
+        }
+
+        table {
+            padding-left: 70px;
+            padding-top: 10px;
+        }
+        #statement{
+            margin-left: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <div id="outbox">
+        <h1 style="color: black; margin-left: 50px;">LOGIN TO DRF</h1>
+        <table class="tab">
+            <form action="">
+            <tr>
+                <td><label for="">Username*</label></td>
+                
+            </tr>
+            <tr>
+                <td><input type="text" id="usr" pattern=".{5,}" title="Username must consist of 5 characters" required></td>
+            </tr>
+            <tr>
+                <td><label for="" id="">Password*</label></td>
+            </tr>
+            <tr>
+                <td><input type="password" id="pswrd" pattern=".{7,}" title="Password must consist 7 characters" required></td>
+                <td><button onclick="show()"><i class="fa-solid fa-eye"></i></button></td>
+            </tr>
+        </form>
+        </table>
+        <div id="button">
+            <form action="">
+                <button style="background-color:red; color: white; border: none;" type="reset">Cancel</button>
+                <button style="background-color:green; color: white; border: none;" onclick="task()" type="submit">Login</button>
+            </form>
+        </div>
+        <label for="" id="statement"></label>
+    </div>
+    <script>
+        function show() {
+            var pass=document.getElementById("pswrd");
+            if(pass.type=="text")
+            {
+                pass.type="password"
+            }
+            else{
+                pass.type="text"
+            }
+        }
+        function task(){
+            var p=document.getElementById("pswrd").value;
+            var us=document.getElementById("usr").value;
+            var user=us.slice(0,3);
+            var usnm=user+1234;
+            if(p==usnm)
+            {
+                document.getElementById("statement").innerHTML="You are logged in successfully!"
+            }
+            else if(p!=usnm){
+                document.getElementById("statement").innerHTML="Couldn't log you in! Please recheck"
+            }
+        }
+    </script>
+</body>
+
+</html>

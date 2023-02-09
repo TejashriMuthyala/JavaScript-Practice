@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #outbox {
+            border: 2px solid black;
+            height: 300px;
+            width: 450px;
+            margin-left: 400px;
+            margin-top: 150px;
+            padding-left: 60px;
+            padding-right: 30px;
+            background-color: rgba(0, 0, 0, 0.4);
+            
+        }
+        #button {
+            margin-left: 60px;
+            margin-top: 20px;
+            padding-left: 80px;
+            padding-bottom: 20px;
+        }
+
+        table {
+            padding-left: 70px;
+            padding-top: 10px;
+            color: white;
+        }
+        img{
+            height: 250px;
+            width: 800px;
+            margin-left: 250px;
+            opacity: 0.5;
+        }
+        #statement{
+            padding-left: 60px;
+            padding-top: 50px;
+        }
+        body{
+            background-image: url("https://www.kotak.com/content/dam/Kotak/digital-banking/insta-services/kaymall/1440X400-Bus.jpg");
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <div id="outbox" class="bod">
+        <h1 style="color: white; margin-left: 10px;">TICKET REGISTRATION</h1>
+        <table class="tab">
+            <tr>
+                <td><label for="">Name </label></td>
+                <td><input type="text" id="name"></td>
+            </tr>
+            <tr></tr>
+            <tr>
+                <td><label for="" id="">Source</label></td>
+                <td><input type="text" id="from"></td>
+            </tr>
+            <tr></tr>
+            <tr>
+                <td><label for="">Destination</label></td>
+                <td><select id="to">
+                        <option value="500">Tirupati</option>
+                        <option value="600">Vizag</option>
+                        <option value="400">Srisailam</option>
+                        <option value="1000">Amarnadh</option>
+                        <option value="200">Kanipakam</option>
+                    </select></td>
+            </tr>
+            <tr></tr>
+            <tr>
+                <td><label for="">No. of tickets</label></td>
+                <td><input type="text" id="ticket"></td>
+            </tr>
+        </table>
+        <div id="button">
+            <button style="background-color:green; color: white; border: none;" onclick="task()">Submit</button>
+            <button style="background-color:red; color: white; border: none;">Cancel</button>
+        </div>
+        <label id="statement" style="color: white;"></label>
+    </div>
+    <script>
+        function task() {
+            var user = document.getElementById("name").value;
+            var km = document.getElementById("to").value;
+            var totalkm = parseInt(km * 5)
+            var tickets = parseInt(document.getElementById("ticket").value)
+            var ticketsamount = parseInt(totalkm * tickets)
+            var gst=(18/100)
+            var comp = parseInt(ticketsamount*gst)
+            var total=parseInt(ticketsamount+comp)
+            document.getElementById("statement").innerHTML = "Hey " + user + ", your total amount to be paid is " + total
+        }
+    </script>
+</body>
+
+</html>

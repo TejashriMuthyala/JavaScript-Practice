@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #outbox {
+            border: 2px solid black;
+            height: 300px;
+            width: 450px;
+            margin-left: 400px;
+            margin-top: 150px;
+            padding-left: 60px;
+            padding-right: 30px;
+            
+        }
+        #button {
+            margin-left: 60px;
+            margin-top: 20px;
+            padding-left: 80px;
+            padding-bottom: 20px;
+        }
+
+        table {
+            padding-left: 70px;
+            padding-top: 10px;
+        }
+        img{
+            height: 250px;
+            width: 800px;
+            margin-left: 250px;
+            opacity: 0.5;
+        }
+        #statement{
+            padding-left: 60px;
+            padding-top: 50px;
+        }
+        input{
+            border: none;
+            border-bottom: 1px solid black;
+            outline: none;
+        }
+        #totalamt{
+            border: none; 
+            border-bottom: 1px solid black;
+            width:200px;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <div id="outbox" class="bod">
+        <h1 style="color: black; margin-left: 135px;">TSSPDCL</h1>
+        <table class="tab">
+            <tr>
+                <td><label for="">Meter Number</label></td>
+                <td><input type="text" id="num"></td>
+            </tr>
+            <tr></tr>
+            <tr></tr>
+            <tr>
+                <td><label for="" id="">Number of units</label></td>
+                <td><input type="text" id="units"></td>
+            </tr>
+            <tr></tr>
+            <tr></tr>
+            <tr>
+                <td><label for="">City</label></td>
+                <td><select id="city">
+                        <option value="">Select your City</option>
+                        <option value="1">Hyderabad</option>
+                        <option value="2">Banglore</option>
+                    </select></td>
+            </tr>
+            <tr></tr>
+            <tr></tr>
+            <tr>
+                <td><label for="">Building type</label></td>
+                <td><select id="building">
+                        <option value="">Select your building type</option>
+                        <option value="3">Commercial</option>
+                        <option value="4">Non Commercial</option>
+                    </select>
+                </td>
+            </tr>
+            <tr></tr>
+            <tr></tr>
+            <tr>
+                <td><label for="">Total amount:</label></td>
+                <td><div for="" id="totalamt" style="border-bottom:1px solid black;width: 175px;">&nbsp;</div></td>
+            </tr>
+            <tr></tr>
+            <tr></tr>
+        </table>
+        <div id="button">
+            <button style="background-color:green; color: white; border: none;" onclick="task()">Calculate</button>
+            <button style="background-color:red; color: white; border: none;">Print</button>
+        </div>
+        <label id="statement" style="color: white;"></label>
+    </div>
+    <script>
+        function task() {
+            var no_units=document.getElementById("units").value;
+            var city=document.getElementById("city").value;
+            var btype=document.getElementById("building").value;
+            if(city==1)
+            {
+                if(btype==3)
+                {
+                    var unitsamt=parseInt(no_units*12);
+                    var gst=parseInt(unitsamt*0.6);
+                    var total=parseInt(unitsamt+gst);
+                    document.getElementById("totalamt").innerHTML=total;
+                }
+                else
+                {
+                    var unitsamt=parseInt(no_units*10);
+                    var gst=parseInt(unitsamt*0.5);
+                    var total=parseInt(unitsamt+gst);
+                    document.getElementById("totalamt").innerHTML=total;
+                }
+            }
+            else
+            {
+                if(btype==3)
+                {
+                    var unitsamt=parseInt(no_units*15);
+                    var gst=parseInt(unitsamt*0.8);
+                    var total=parseInt(unitsamt+gst);
+                    document.getElementById("totalamt").innerHTML=total;
+                }
+                else
+                {
+                    var unitsamt=parseInt(no_units*11);
+                    var gst=parseInt(unitsamt*0.6);
+                    var total=parseInt(unitsamt+gst);
+                    document.getElementById("totalamt").innerHTML=total;
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

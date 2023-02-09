@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #outbox {
+            border: 2px solid black;
+            height: 300px;
+            width: 300px;
+            margin-left: 500px;
+            margin-top: 100px;
+            padding-left: 20px;
+        }
+
+        #button {
+            margin-left: 60px;
+            margin-top: 20px;
+            padding: 10px;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="outbox">
+        <h1>FIXED DEPOSIT CALCULATOR</h1>
+        <table>
+            <tr>
+                <td><label for="">Name </label></td>
+                <td><input type="text" id="name"></td>
+            </tr>
+            <tr></tr>
+            <tr>
+                <td><label for="" id="">Amount</label></td>
+                <td><input type="text" id="amount"></td>
+            </tr>
+            <tr></tr>
+            <tr>
+                <td><label for="">Term in years</label></td>
+                <td><select id="term">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select></td>
+            </tr>
+            <tr></tr>
+            <tr>
+                <td><label for="">Year of Birth</label></td>
+                <td><input type="text" id="yob"></td>
+            </tr>
+        </table>
+        <div id="button">
+            <button style="background-color:green;" onclick="roi()">Submit</button>
+            <button style="background-color:red;">Cancel</button>
+        </div>
+        <label id="maturity"></label>
+    </div>
+    <script>
+        function roi() {
+            var yob = parseInt(document.getElementById("yob").value)
+            var myage = parseInt(2023 - yob);
+            var p = parseInt(document.getElementById("amount").value)
+            var t = parseInt(document.getElementById("term").value)
+            var r
+            if (myage <= 40) {
+                r = 5;
+            }
+            else if (myage > 40 && myage < 60) {
+                r = 6
+            }
+            else {
+                r = 8
+            }
+            var si = parseInt(p * t * r / 100)
+            var total = parseInt(si + p)
+            var person = document.getElementById("name").value
+            document.getElementById("maturity").innerHTML = person + ", your maturity rate is : " + total
+        }
+    </script>
+</body>
+
+</html>
